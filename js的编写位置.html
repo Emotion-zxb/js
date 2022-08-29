@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  可以将js代码写在标签的onclick属性中，当我们点击按钮时，js代码才会执行  -->
+<button onclick="alert('讨厌，你点我干嘛~~')">点我一下</button>
+
+<!--可以将代码写在超链接的href属性中，这样当点击超链接时，会执行js代码-->
+<a href="javascript:alert('hello world')">我是超链接</a>
+<a href="javascript:;">我是超链接</a>
+<!--下面这种写法会有刷新页面的效果，上面的不会-->
+<a href="">我是超链接</a>
+
+<!--script标签一旦用于引入外部文件了，就不能在标签体内编写代码了，即使编写了也是无效的，可以创建一个新的script标签用于编写js代码-->
+
+<script src="./js文件夹/script.js"></script>
+<script>
+<!--可以将js代码编写在script标签中-->
+    alert('我是script标签中~');
+</script>
+</body>
+</html>
