@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clientWidth</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 400px;
+            height: 200px;
+            margin: 10px;
+            background-color: #bfc;
+            overflow: auto;
+        }
+        #box2{
+            width: 250px;
+            height: 800px;
+            background-color: greenyellow;
+        }
+        p{
+            font-size: 28px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative">
+        <div id="box1">
+            <div id="box2">
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+                <p>bilibili</p>
+            </div>
+        </div>
+    </div>
+    <button id="btn">开始滚动</button>
+</body>
+<script>
+    //获取盒子
+    let box = document.querySelector('#box1');
+    let btn = document.querySelector('#btn');
+    let box2 = document.querySelector('#box2');
+    //给按钮绑定一个点击事件
+    btn.onclick = function (){
+        //开始执行滚动
+        setInterval(() => {
+            if(box.scrollTop < 600){
+                box.scrollTop += 5;
+            }
+        },100)
+    };
+
+</script>
+</html>
