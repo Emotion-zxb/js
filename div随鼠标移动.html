@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #bfc;
+            position: absolute;
+            color: gray;
+        }
+        #body{
+            position: relative;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="box"></div>
+</body>
+<script>
+    //获取body
+    let body = document.getElementById('body');
+    //获取box
+    let box = document.getElementById('box');
+    //获取html
+    let html = document.documentElement;
+    //这里是给document绑定事件
+    document.onmousemove = (event) => {
+        box.style.left = event.clientX + html.scrollLeft + 'px';
+        box.style.top = event.clientY + html.scrollTop +'px';
+    }
+</script>
+</html>
