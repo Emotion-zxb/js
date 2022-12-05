@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="box">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+    <ul id="box1">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+</body>
+<script !src="">
+    /*
+    * document.querySelector()  支持css选择器的写法，返回的是第一个查到的数据
+    * document.querySelectorAll()   返回的是一个数组
+    * */
+
+    let box = document.querySelector('li');
+    console.log('box',box);
+
+    let demo = document.querySelectorAll('#box li');
+    console.log(demo);
+</script>
+</html>

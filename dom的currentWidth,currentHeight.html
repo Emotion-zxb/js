@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 200px;
+            height: 300px;
+            background-color: #bfc;
+            overflow: auto;
+        }
+        #box2{
+            width: 180px;
+            height: 600px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+            <p>hello world</p>
+        </div>
+    </div>
+</body>
+<script>
+    /*
+    * currentWidth
+    * currentHeight
+    * scrollTop
+    * scrollLeft
+    * scrollWidth
+    * scrollHeight
+    *
+    * */
+    //这里要注意，我们是给box1添加的scroll事件
+    let box1 = document.getElementById('box1');
+    box1.onscroll = function (){
+        if(box1.scrollHeight - box1.scrollTop < getComputedStyle(box1).height){
+            console.log('到底了');
+        }
+    };
+</script>
+</html>

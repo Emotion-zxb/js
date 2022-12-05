@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onload的使用</title>
+    <script>
+
+        //等待页面加载完成后执行脚本操作
+        //注意window的onload是一个事件，事件触发后执行回调函数
+        window.onload = () => {
+            let btn = document.getElementById('btn');
+            btn.onclick = () => {
+                console.log(btn);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <button id="btn">查询</button>
+</body>
+
+</html>

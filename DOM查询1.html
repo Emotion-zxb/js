@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询</title>
+</head>
+<body>
+<ul id="chr">
+    <li>hello</li>
+    <li>hi</li>
+    <li>good</li>
+    <li>green</li></ul>
+<script>
+    /*
+    *   getElementsByTagName方法
+    * 获取某节点下的某标签名的所有元素
+    * */
+    let chr = document.getElementById('chr');
+    let lis = chr.getElementsByTagName('li');
+    // console.log('lis',lis);
+
+    /*
+    * childNodes属性
+    * 当前节点下的所有子节点
+    * */
+    // let allNodes = chr.childNodes;
+    // console.log('allNodes',allNodes);
+
+    /*
+    * firstChild  and  lastChild属性
+    * 第一个子节点
+    * */
+
+    let fir = chr.firstChild;
+
+    let las = chr.lastChild;
+    console.log('fir',fir);
+    console.log('las',las);
+</script>
+</body>
+</html>

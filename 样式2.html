@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    const box = document.querySelector('#box');
+    box.onclick = () => {
+        /*读取box的width*/
+        //console.log('width',box.style.width);//无效，只获内联样式
+
+        /*通过currentStyle*/
+        /*Google不支持*/
+
+        /*getComputedStyle*/
+        /*支持Google*/
+        console.log('getComputedStyle:',getComputedStyle(box).width);
+    }
+</script>
+</html>

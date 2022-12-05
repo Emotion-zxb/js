@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的委派</title>
+    <style>
+    </style>
+</head>
+<body>
+    <button id="btn">加一条</button>
+    <ul>
+        <li><a href="javascript:">链接1</a></li>
+        <li><a href="javascript:">链接2</a></li>
+        <li><a href="javascript:">链接3</a></li>
+    </ul>
+</body>
+<script>
+    //获取box1
+    let box1 = document.getElementById('box1');
+    //获取按钮
+    let btn = document.getElementById('btn');
+    btn.onclick = () => {
+        //创建一个li
+        let li = document.createElement('li');
+        li.innerHTML = '<a href="javascript:">新de链接</a>';
+        //插入li
+        document.getElementsByTagName('ul')[0].appendChild(li);
+    }
+    //为ul绑定一个点击事件
+    document.getElementsByTagName('ul')[0].onclick = (event) => {
+        //event.target  事件的目标
+        // console.log('event',event.target);
+        // console.log(event.target.tagName);
+        //判断点击的是否是a标签
+        if(event.target.tagName === 'A'){
+            alert('www');
+        }
+    }
+</script>
+</html>

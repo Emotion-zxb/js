@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览图片</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid gainsboro;
+            margin: 100px auto;
+        }
+        img{
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="./1.png">
+        <button id="pre">上一张</button>
+        <button id="next">下一张</button>
+        <p>共 <b>1</b> 张，第 <b>1</b> 张</p>
+    </div>
+</body>
+<script>
+    let pre = document.getElementById('pre');
+    let next = document.getElementById('next');
+    let img = document.getElementsByTagName('img')[0];
+    let chr1 = document.getElementsByTagName('b')[0];
+    let chr2 = document.getElementsByTagName('b')[1];
+
+    const arr = ['1.png','2.png','3.png','4.png'];
+    let index = 0;
+    chr1.innerText = arr.length.toString();
+    //上一张
+    pre.onclick = function () {
+        if(index === 0){
+            index = arr.length - 1;
+        }else{
+            index--;
+        }
+        chr2.innerText = (index + 1).toString();
+        img.src = arr[index];
+    };
+    //下一张
+    next.onclick = function () {
+        if(index === arr.length-1){
+            index = 0;
+        }else{
+            index++;
+        }
+        chr2.innerText = (index + 1).toString();
+        img.src = arr[index];
+    }
+</script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="isAll">是否全选</label>
+    <input type="checkbox" id="isAll"><br>
+    <label for="tongling">铜陵</label>
+    <input type="checkbox" id="tongling" name="city"><br>
+    <label for="hangzhou">杭州</label>
+    <input type="checkbox" id="hangzhou" name="city"><br>
+    <label for="shanghai">上海</label>
+    <input type="checkbox" id="shanghai" name="city"><br>
+    <button id="all">全选</button>
+    <button id="not">全不选</button>
+    <button id="back">反选</button>
+    <button id="submit">提交</button>
+</body>
+<script>
+    /*
+    * 全选
+    * */
+    //获取按钮
+    let btn1 = document.getElementById('all');
+    let btn2 = document.getElementById('not');
+    let btn3 = document.getElementById('back');
+    let btn4 = document.getElementById('submit');
+    let check_is_all = document.getElementById('isAll');
+    let tongling = document.getElementById('tongling');
+    let hangzhou = document.getElementById('hangzhou');
+    let shanghai = document.getElementById('shanghai');
+    //绑定事件
+    btn1.onclick = () => {
+        //获取input
+        let check_box = document.getElementsByName('city');
+        //遍历数组
+        for(let i = 0; i < check_box.length; i++){
+            check_box[i].checked = true;
+        };
+        check_is_all.checked = true;
+    };
+    btn2.onclick = () => {
+        //获取input
+        let check_box = document.getElementsByName('city');
+        //遍历数组
+        for(let i = 0; i < check_box.length; i++){
+            check_box[i].checked = false;
+        };
+        check_is_all.checked = false;
+    };
+    btn3.onclick = () => {
+        //获取input
+        let check_box = document.getElementsByName('city');
+        //遍历数组
+        for(let i = 0; i < check_box.length; i++){
+            check_box[i].checked = !check_box[i].checked;
+        };
+        let flag = true;
+        for(let i = 0; i< check_box.length;i++){
+            if(!check_box[i].checked){
+                flag = false;
+            }
+        };
+        check_is_all.checked = flag;
+    };
+    btn4.onclick = () => {
+        //获取input
+        let check_box = document.getElementsByName('city');
+        //遍历数组
+        let str = '';
+        for(let i = 0; i < check_box.length; i++){
+            if(check_box[i].checked){
+                str = str + check_box[i].id + '-';
+            };
+        };
+        alert(str.slice(0,-1));
+    };
+    check_is_all.onclick = () => {
+        //获取input
+        let check_box = document.getElementsByName('city');
+        //遍历数组
+        for(let i = 0; i < check_box.length; i++){
+            check_box[i].checked = check_is_all.checked;
+        }
+    };
+
+    tongling.onclick = () => {
+        if(tongling.checked){
+            if(hangzhou.checked && shanghai.checked){
+                check_is_all.checked = true;
+            }else{
+                check_is_all.checked = false;
+            }
+        } else {
+            check_is_all.checked = false;
+        }
+    };
+    hangzhou.onclick = () => {
+        if(hangzhou.checked){
+            if(tongling.checked && shanghai.checked){
+                check_is_all.checked = true;
+            }else{
+                check_is_all.checked = false;
+            }
+        } else {
+            check_is_all.checked = false;
+        }
+    };
+    shanghai.onclick = () => {
+        if(shanghai.checked){
+            if(hangzhou.checked && tongling.checked){
+                check_is_all.checked = true;
+            }else{
+                check_is_all.checked = false;
+            }
+        } else {
+            check_is_all.checked = false;
+        }
+    }
+
+</script>
+</html>

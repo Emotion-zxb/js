@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个构造函数
+        // function Pc(){
+
+        // }
+        // let a = new Pc();
+        // console.log(a);//undefined
+        // 区别1：普通函数返回的是undefined，构造函数返回的是一个对象，其实本质上写法是一样的，只是构造函数要用new调用
+
+        // new 一个构造函数会执行以下步骤：
+        /*
+            1.创建一个对象
+            2.构造函数中的this指向新创建出来的对象
+            3.执行构造函数里面的代码
+            4.返回这个对象
+        */
+
+        // 创建一个Pc的构造函数(构造函数也叫‘类’)
+        function Pc(name,){
+            this.name = name;
+        };
+        function KeyBorad(name){
+            this.name = name;
+        };
+        let a = new Pc('hp');
+        let b = new Pc('DELL');
+        let c = new KeyBorad('LG');
+        let d = new KeyBorad('ikbc');
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+
+        console.log(a instanceof Pc);
+        console.log(c instanceof KeyBorad);
+        console.log(c instanceof Object);
+        console.log(a instanceof Object);
+
+        const obj = {name: '张三'};
+        console.log((obj instanceof Object) + '@@@');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="box">
+        <li id="pf">《平凡的世界》</li>
+        <li>《被讨厌的勇气》</li>
+        <li>《尘微》</li>
+    </ul>
+        <button id="btn">按钮</button>
+</body>
+<script>
+    /*
+    * 添加一个《杀死一只知更鸟》
+    * */
+    /*document.getElementById('btn').onclick = () => {
+        let li = document.createElement('li');
+        li.innerText = '《杀死一只知更鸟》';
+        let box = document.getElementById('box');
+        box.appendChild(li);
+    };*/
+    /*
+    * 删除一个节点
+    * */
+    /*document.getElementById('btn').onclick = () => {
+        let box = document.getElementById('box');
+        box.removeChild(document.getElementById('pf'));
+    };*/
+    document.getElementById('btn').onclick = () => {
+        let li = document.createElement('li');
+        li.innerText = '《杀死一只知更鸟》';
+        let box = document.getElementById('box');
+        box.replaceChild(li,document.getElementById('pf'));
+    };
+</script>
+</html>
