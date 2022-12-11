@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+            position: relative;
+        }
+        #box:hover {
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    //获取盒子
+    let box = document.getElementById('box');
+    //绑定鼠标的按下的事件
+    box.onmousedown = (event) => {
+        //绑定鼠标的移动的事件；但是要注意是给谁绑定，这里可以个document绑定
+
+        //计算点的位置
+        let startX = event.clientX-parseInt(getComputedStyle(box).left);
+        let startY = event.clientY-parseInt(getComputedStyle(box).top);
+
+        document.onmousemove = (event) => {
+            box.style.left = event.clientX-startX+'px';
+            box.style.top = event.clientY-startY+'px';
+        };
+        //这里给document绑定一个鼠标松开事件
+        document.onmouseup = () => {
+            document.onmousemove = null;
+        }
+        //完毕！
+    }
+</script>
+</html>
