@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #bfc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span></span>
+    </div>
+</body>
+<script>
+    //绑定鼠标事件
+    let box = document.querySelector('#box');
+    box.onmousemove = (event) => {
+        // console.log('event',event.clientX,event.clientY);
+        document.getElementsByTagName('span')[0].innerText = '水平：'+event.clientX+ ','+'垂直：'+event.clientY;
+    };
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = prompt('请输入：');
+        let f = s - 60 >= 0 ? true : false;
+        switch(f){
+            case true:
+                console.log('合格');
+                break;
+            case false:
+                console.log('不合格');
+                break;
+        }
+        /*
+            这里是拿 f 与 case 后面的值做 === 比较
+            break是‘跑出’switch语句，没有break的话，一旦case匹配成功，那么会执行下面所有的语句，叫做‘穿透’
+
+
+        */
+    </script>
+</body>
+</html>
